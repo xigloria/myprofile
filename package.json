@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/xigloria/myprofile/issues"
   },
-  "homepage": "https://github.com/xigloria/myprofile#readme"
+  "homepage": "https://github.com/xigloria/myprofile#readme",
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
 }

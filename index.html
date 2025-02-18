@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     </head>
     <body>
         <section>
@@ -22,9 +23,17 @@
                 <div class="article">
                     <h1>Welcome</h1>
                     <p>I'm your tour guide for today click below to travel the world</p>
-                    <a href="map.html" class="btn">Lets Start!</a>
+                    <button id="startButton">Lets Start!</a>
                 </div>
             </div>
+            <div id="map-container">
+                <h2>My Interactive Map</h2>
+                <div id="map"></div>
+                <button id="backButton">Back to Profile</button>
+            </div>
+            
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script src="script.js"></script>
         </section>
     </body>
 </html>

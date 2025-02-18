@@ -86,3 +86,8 @@ nav ul li .active{
     background-color: #4399fa;
     transition: 0.5s ease;
 }
+
+#map {
+    height: 300px;
+    
+}
