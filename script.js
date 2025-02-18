@@ -23,13 +23,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function initializeMap() {
-        const map = L.map("map").setView([-33.8688, 151.2093], 13);
+        const map = L.map("map").setView([-33.8688, 151.2093], 3);
 
         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
             maxZoom: 19,
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+
+        const customIcon = L.icon({
+            iconUrl: "starred.png",
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+        })
+        let marker = L.marker([-33.8688, 151.2093], { icon: customIcon }).addTo(map);
     }
+
 })
 
 
