@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
         console.log(mapElement);
-        const map = L.map("map").setView([-33.8688, 151.2093], 3);
+        
         console.log(map);
 
         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {

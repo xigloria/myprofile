@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gloria's Travel Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #3b82f6, #6366f1);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        #map {
+            height: 80vh;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-5xl font-bold">Around the World with Gloria!</h1>
+        <p class="text-lg md:text-xl lg:text-2xl font-medium leading-relaxed mt-4">
+            To find fun facts about me, click on the checkpoints around the world!
+        </p>
+    </div>
+
+    <div id="map"></div>
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const map = L.map("map").setView([-33.8688, 151.2093], 5);
+
+            L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            const customIcon = L.icon({
+                iconUrl: "images/starred.png",
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+            });
+
+            const locations = [
+                { coords: [-33.8688, 151.2093], label: "Courses I have taken include: COMP1511, 1521, 1531, 2521, 2041, 2511, 6080" },
+                { coords: [23.1291, 113.2644], label: "One of my favourite foods is cheung fun and yumcha nom nom" },
+                { coords: [22.3193, 114.1694], label: "I was born here! (in Hong Kong) but my Cantonese is really bad" },
+                { coords: [37.5665, 126.9780], label: "I really like learning languages! I tried learning Korean when I was younger (and I am still learning the alphabet!)" },
+                { coords: [35.6895, 139.6917], label: "I think smiskis are superior to sonny angels. My go to coffee order is iced matcha with oat milk" },
+                { coords: [13.7563, 100.5018], label: "One of my 2025 visions I had on my vision board is to visit Thailand (I really want to try the 7/11 Thai tea)" },
+                { coords: [40.7128, -74.0060], label: "I really enjoy eating pizza that's been microwaved. I think it's better than fresh pizza!" },
+                { coords: [51.5074, -0.1278], label: "My biggest pet peeve is when people don't stand to the left of the escalator (or right in some countries)" }
+            ];
+
+            locations.forEach(location => {
+                L.marker(location.coords, { icon: customIcon }).addTo(map)
+                    .bindPopup(`<h3>${location.label}</h3>`);
+            });
+        });
+    </script>
+
+</body>
+</html>
+
