@@ -19,7 +19,14 @@
   },
   "homepage": "https://github.com/xigloria/myprofile#readme",
   "dependencies": {
+    "@tailwindcss/cli": "^4.0.7",
+    "@tailwindcss/vite": "^4.0.7",
     "leaflet": "^1.9.4",
     "leaflet-providers": "^2.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^4.0.7"
   }
 }
