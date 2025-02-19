@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
         <section>
@@ -26,12 +27,22 @@
                     <button id="startButton">Lets Start!</a>
                 </div>
             </div>
+
             <div id="map-container">
-                <h2>My Interactive Map</h2>
                 <div id="map"></div>
                 <button id="backButton">Back to Profile</button>
             </div>
-            
+
+            <div id="mapModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+                <div class="bg-white p-6 rounded-lg shadow-lg max-w-md text-center">
+                <h2 class="text-xl font-semibold">Welcome to the Map!</h2>
+                <p class="mt-2 text-gray-700">Use the map to explore checkpoints. Click on markers for more info.</p>
+                <button id="closeModal" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                    Got it!
+                </button>
+                </div>
+            </div>
+  
             <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
             <script src="script.js"></script>
         </section>

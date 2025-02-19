@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/xigloria/myprofile#readme",
   "dependencies": {
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "leaflet-providers": "^2.0.0"
   }
 }
